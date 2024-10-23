@@ -60,7 +60,7 @@ FROM SensorReadings
 WHERE SensorID IN (SELECT SensorID FROM Sensors WHERE SensorType = 'Temperature');
 
 --13.Find latest Reading for each Sensor.
-SELECT DISTINCT(s.SensorType),sr.ReadingValue,sr.ReadingTime
-FROM SensorReadings sr
-JOIN Sensors s ON sr.SensorID = s.SensorID
-ORDER BY sr.ReadingTime DESC;
+SELECT s.SensorID, s.SensorType, sr.ReadingValue, sr.ReadingTime
+FROM Sensors s
+JOIN SensorReadings sr ON s.SensorID =sr.SensorID
+WHERE sr.ReadingTime = (SELECT MAX(ReadingTime) FROM SensorReadings WHERE SensorID = s.SensorID);
