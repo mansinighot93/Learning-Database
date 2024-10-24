@@ -1,0 +1,1 @@
+sqlcmd -S MANSI\SQLEXPRESS -d tflgreenhouse -E -i "D:\Transflower\TFLGreenhouseAutomation\solution\DBSolution\MsSQL\Insert_Sensors.sql"

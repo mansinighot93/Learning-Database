@@ -51,5 +51,9 @@ INSERT INTO Settings (SensorType, ThresholdMin, ThresholdMax, NotificationEnable
 ('Light', 200, 800, 1);            -- Alerts if out of range
  
  SELECT * FROM Settings;
-
+ 
+ --Show Tables Details
  EXEC sp_tables;
+
+--Insert Sample Data into Temporary Count
+ INSERT INTO TemporaryCount VALUES (0);
