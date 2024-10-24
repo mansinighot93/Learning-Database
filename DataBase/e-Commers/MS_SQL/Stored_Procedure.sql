@@ -148,3 +148,4 @@ END
 -- Execute Stored Procedured
 EXEC ApplyDiscount @p_order_id='1' , @p_discount_code='DIWALI21';
 SELECT * FROM orders;	
+select * from discount_codes;
